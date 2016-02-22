@@ -36,4 +36,10 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("ListType",3);
         startActivity(intent);
     }
+
+    public void swipRefreshOnClick(View view) {
+        Intent intent = new Intent(this,ListActivity.class);
+        intent.putExtra("ListType",4);
+        startActivity(intent);
+    }
 }

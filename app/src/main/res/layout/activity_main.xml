@@ -32,4 +32,11 @@
         android:onClick="gridWithHeaderOnClick"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+    <Button
+        android:text="SwipRefreshList"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:onClick="swipRefreshOnClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>

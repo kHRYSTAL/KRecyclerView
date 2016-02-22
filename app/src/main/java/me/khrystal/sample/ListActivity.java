@@ -3,8 +3,6 @@ package me.khrystal.sample;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 
 public class ListActivity extends AppCompatActivity {
 
@@ -19,11 +17,17 @@ public class ListActivity extends AppCompatActivity {
 
     private void initFragment() {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        ListFragment fragment = new ListFragment();
-        Bundle bundle = new Bundle();
-        bundle.putInt("ListType",type);
-        fragment.setArguments(bundle);
-        transaction.add(R.id.fragment_container,fragment);
-        transaction.commit();
+        if (type==4){
+            SwipRefreshListFragment fragment = new SwipRefreshListFragment();
+            transaction.add(R.id.fragment_container,fragment);
+            transaction.commit();
+        }else {
+            ListFragment fragment = new ListFragment();
+            Bundle bundle = new Bundle();
+            bundle.putInt("ListType", type);
+            fragment.setArguments(bundle);
+            transaction.add(R.id.fragment_container, fragment);
+            transaction.commit();
+        }
     }
 }

@@ -9,7 +9,6 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewStub;
@@ -141,7 +140,6 @@ public class KRecyclerView extends RelativeLayout{
 
             @Override
             public void onRefreshBegin(PtrFrameLayout ptrFrameLayout) {
-                Log.e("KRecyclerView","refresh");
                 refresh();
             }
         });
@@ -311,7 +309,6 @@ public class KRecyclerView extends RelativeLayout{
         } else {
             if (page!=1) RecyclerViewStateUtils.setFooterViewState(mRecyclerView, LoadingFooter.State.Loading);
             else RecyclerViewStateUtils.setFooterViewState(mRecyclerView, LoadingFooter.State.Normal);
-            Log.e("KRecyclerView","loadData"+page);
             mListener.loadData(page);
         }
     }
@@ -373,6 +370,11 @@ public class KRecyclerView extends RelativeLayout{
             }
         }, maxRefreshTime);
         mPage = 1;
+        load(mPage);
+    }
+
+    public void setPageAndRefresh(int page){
+        mPage = page;
         load(mPage);
     }
 
