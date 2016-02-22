@@ -1,0 +1,35 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context=".MainActivity">
+
+    <Button
+        android:text="List"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:onClick="listOnClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:text="Grid"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:onClick="gridOnClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:text="ListWithHeader"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:onClick="listWithHeaderOnClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:text="GridWithHeader"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:onClick="gridWithHeaderOnClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>
