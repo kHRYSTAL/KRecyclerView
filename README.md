@@ -13,6 +13,12 @@ dependent on [Ultra-Pull-To-Refresh](https://github.com/liaohuqiu/android-Ultra-
 
 it's support Grid and List(Refresh and LoadMore orientation is Vertical)
 
+##screenshot
+![ss-1](https://github.com/kHRYSTAL/KRecyclerView/blob/master/screenshot/screenshot1.png)
+![ss-2](https://github.com/kHRYSTAL/KRecyclerView/blob/master/screenshot/screenshot2.png)
+![ss-3](https://github.com/kHRYSTAL/KRecyclerView/blob/master/screenshot/screenshot3.png)
+
+
 ##Setup with Android Studio
 ```
     allprojects {
