@@ -120,6 +120,11 @@ krecyclerView.hideEmptyView();
 krecyclerView.enableLoadMore();
 krecyclerView.cantLoadMore();
 ```
+###addheaderView
+```java
+headerView = LayoutInflater.from(getContext()).inflate(R.layout.header_view,recyclerView,false);
+recyclerView.addHeaderView(headerView);
+```
 
 
 ###more usage can watch sample

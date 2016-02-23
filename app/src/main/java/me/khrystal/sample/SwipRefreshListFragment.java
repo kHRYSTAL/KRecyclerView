@@ -87,7 +87,7 @@ public class SwipRefreshListFragment extends Fragment implements KRecyclerView.L
             @Override
             protected List<String> doInBackground(Void... params) {
                 try {
-                    Thread.sleep(2000);
+                    Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

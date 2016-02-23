@@ -8,7 +8,6 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -70,6 +69,10 @@ public class ListFragment extends Fragment implements KRecyclerView.LoadDataList
         recyclerView.setLoadDataLintener(this);
         recyclerView.setItemCount(10);
         recyclerView.isUseByNetWork(false);
+        if (type==3||type==2) {
+            headerView = LayoutInflater.from(getContext()).inflate(R.layout.header_view, recyclerView, false);
+            recyclerView.addHeaderView(headerView);
+        }
         setCustomRefresh();
 //        autorefresh once
         if (type%2==1) {
@@ -82,7 +85,7 @@ public class ListFragment extends Fragment implements KRecyclerView.LoadDataList
             }, 400);
         }
 
-        if (!autoRefresh)
+        if (!autoRefresh&&headerView==null)
             recyclerView.showEmptyView();
 
     }
@@ -113,7 +116,7 @@ public class ListFragment extends Fragment implements KRecyclerView.LoadDataList
             @Override
             protected List<String> doInBackground(Void... params) {
                 try {
-                    Thread.sleep(2000);
+                    Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
