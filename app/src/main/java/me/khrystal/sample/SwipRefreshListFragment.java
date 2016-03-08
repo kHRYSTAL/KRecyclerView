@@ -53,7 +53,7 @@ public class SwipRefreshListFragment extends Fragment implements KRecyclerView.L
         swipeRefreshLayout = (SwipeRefreshLayout)view.findViewById(R.id.swip_refresh);
         recyclerView = (KRecyclerView) view.findViewById(R.id.recyclerview);
         adapter = new SimpleAdapter(this, dataList);
-        recyclerView.setAdapter(adapter, 1, LinearLayoutManager.VERTICAL);
+        recyclerView.setAdapter(adapter, 1, LinearLayoutManager.VERTICAL,false);
         recyclerView.setLoadDataLintener(this);
         recyclerView.setItemCount(10);
         recyclerView.isUseByNetWork(false);

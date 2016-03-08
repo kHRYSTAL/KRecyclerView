@@ -8,6 +8,7 @@ import android.support.annotation.LayoutRes;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -259,15 +260,20 @@ public class KRecyclerView extends RelativeLayout{
     }
 
 
-    public void setAdapter(RecyclerView.Adapter adapter,int column,int orientation){
+    public void setAdapter(RecyclerView.Adapter adapter,int column,int orientation,boolean staggered){
         mHeaderAndFooterRecyclerViewAdapter = new HeaderAndFooterRecyclerViewAdapter(adapter);
         if (mRecyclerView!=null) {
             mRecyclerView.setAdapter(mHeaderAndFooterRecyclerViewAdapter);
             if (column>1) {
-                GridLayoutManager manager = new GridLayoutManager(mContext, column);
-                manager.setOrientation(orientation);
-                manager.setSpanSizeLookup(new HeaderSpanSizeLookup((HeaderAndFooterRecyclerViewAdapter) mRecyclerView.getAdapter(), manager.getSpanCount()));
-                mRecyclerView.setLayoutManager(manager);
+                if (!staggered) {
+                    GridLayoutManager manager = new GridLayoutManager(mContext, column);
+                    manager.setOrientation(orientation);
+                    manager.setSpanSizeLookup(new HeaderSpanSizeLookup((HeaderAndFooterRecyclerViewAdapter) mRecyclerView.getAdapter(), manager.getSpanCount()));
+                    mRecyclerView.setLayoutManager(manager);
+                }else {
+                    StaggeredGridLayoutManager manager = new StaggeredGridLayoutManager(column,orientation);
+                    mRecyclerView.setLayoutManager(manager);
+                }
             }else {
                 LinearLayoutManager manager = new LinearLayoutManager(mContext);
                 manager.setOrientation(orientation);
@@ -390,4 +396,20 @@ public class KRecyclerView extends RelativeLayout{
             }, 500);
         }
     }
+
+
+    public KRecyclerView setHasFixedSize(boolean fixed){
+        mRecyclerView.setHasFixedSize(fixed);
+        return this;
+    }
+
+    public KRecyclerView setAutoItemAnimatorDuration(int duration) {
+        mRecyclerView.getItemAnimator().setAddDuration(duration);
+        mRecyclerView.getItemAnimator().setMoveDuration(duration);
+        mRecyclerView.getItemAnimator().setChangeDuration(duration);
+        mRecyclerView.getItemAnimator().setRemoveDuration(duration);
+        return this;
+    }
+
+
 }
