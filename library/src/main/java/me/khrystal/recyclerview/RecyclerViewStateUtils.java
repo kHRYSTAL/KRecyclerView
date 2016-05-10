@@ -39,14 +39,12 @@ public class RecyclerViewStateUtils {
 
         HeaderAndFooterRecyclerViewAdapter headerAndFooterAdapter = (HeaderAndFooterRecyclerViewAdapter) outerAdapter;
 
-        //只有一页的时候，就别加什么FooterView了
         if (headerAndFooterAdapter.getInnerAdapter().getItemCount() < pageSize) {
             return;
         }
 
         LoadingFooter footerView;
 
-        //已经有footerView了
         if (headerAndFooterAdapter.getFooterViewsCount() > 0) {
             footerView = (LoadingFooter) headerAndFooterAdapter.getFooterView();
             footerView.setState(state);
