@@ -10,13 +10,24 @@ dependent on [Ultra-Pull-To-Refresh](https://github.com/liaohuqiu/android-Ultra-
 > * load more
 > * showEmptyView
 > * addHeaderView
+> * support sticky header(need fix,couldn't support click)
+
+later:
+> * support multi-type when use sticky header
+> * can modify load more UI  
+
 
 it's support Grid and List(Refresh and LoadMore orientation is Vertical)
+if you want use multi-type display easily, you can use[RecyclerViewAdapterDelegate][3]
+
 
 ##screenshot
-![ss-1](https://github.com/kHRYSTAL/KRecyclerView/blob/master/screenshot/screenshot1.png)
-![ss-2](https://github.com/kHRYSTAL/KRecyclerView/blob/master/screenshot/screenshot2.png)
-![ss-3](https://github.com/kHRYSTAL/KRecyclerView/blob/master/screenshot/screenshot3.png)
+![ss-1](https://github.com/kHRYSTAL/KRecyclerView/blob/master/screenshot/screenshot1.gif)
+![ss-2](https://github.com/kHRYSTAL/KRecyclerView/blob/master/screenshot/screenshot2.gif)
+![ss-3](https://github.com/kHRYSTAL/KRecyclerView/blob/master/screenshot/screenshot3.gif)
+![ss-4](https://github.com/kHRYSTAL/KRecyclerView/blob/master/screenshot/screenshot4.gif)
+![ss-5](https://github.com/kHRYSTAL/KRecyclerView/blob/master/screenshot/screenshot5.gif)
+![ss-6](https://github.com/kHRYSTAL/KRecyclerView/blob/master/screenshot/screenshot6.gif)
 
 
 ##Setup with Android Studio
@@ -30,7 +41,7 @@ it's support Grid and List(Refresh and LoadMore orientation is Vertical)
 ```
 ```
     	dependencies {
-    	        compile 'com.github.kHRYSTAL:KRecyclerView:v0.1.0'
+    	        compile 'com.github.kHRYSTAL:KRecyclerView:v0.2.0'
     	}
 ```
 
@@ -143,4 +154,5 @@ recyclerView.addHeaderView(headerView);
 
 [1]:https://github.com/liaohuqiu
 [2]:https://github.com/cundong
+[3]:https://github.com/kHRYSTAL/RecyclerViewAdapterDelegate
 
