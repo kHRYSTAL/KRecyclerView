@@ -259,6 +259,9 @@ public class KRecyclerView extends RelativeLayout{
         return mRecyclerView.getLayoutManager();
     }
 
+    public HeaderAndFooterRecyclerViewAdapter getAdapter(){
+        return mHeaderAndFooterRecyclerViewAdapter;
+    }
 
     public void setAdapter(RecyclerView.Adapter adapter,int column,int orientation,boolean staggered){
         mHeaderAndFooterRecyclerViewAdapter = new HeaderAndFooterRecyclerViewAdapter(adapter);

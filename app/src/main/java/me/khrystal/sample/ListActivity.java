@@ -21,6 +21,14 @@ public class ListActivity extends AppCompatActivity {
             SwipRefreshListFragment fragment = new SwipRefreshListFragment();
             transaction.add(R.id.fragment_container,fragment);
             transaction.commit();
+        }else if (type == 5) {
+            StickyListFragment fragment = new StickyListFragment();
+            transaction.add(R.id.fragment_container, fragment);
+            transaction.commit();
+        }else if (type==6){
+            MutiTypeStickFragment fragment = new MutiTypeStickFragment();
+            transaction.add(R.id.fragment_container,fragment);
+            transaction.commit();
         }else {
             ListFragment fragment = new ListFragment();
             Bundle bundle = new Bundle();

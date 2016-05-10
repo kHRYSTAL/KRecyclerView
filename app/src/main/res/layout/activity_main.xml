@@ -39,4 +39,19 @@
         android:onClick="swipRefreshOnClick"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+    <Button
+        android:text="StickyHeaderList"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:onClick="stickyheader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!--<Button-->
+        <!--android:text="StickyHeaderMutiList"-->
+        <!--android:gravity="center"-->
+        <!--android:textSize="30sp"-->
+        <!--android:onClick="stickyheaderMuti"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content" />-->
 </LinearLayout>

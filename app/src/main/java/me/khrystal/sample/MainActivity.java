@@ -42,4 +42,22 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("ListType",4);
         startActivity(intent);
     }
+
+    public void stickyheader(View view) {
+        Intent intent = new Intent(this,ListActivity.class);
+        intent.putExtra("ListType",5);
+        startActivity(intent);
+    }
+
+    /**
+     * todo must hand Delegation onBindViewHolder
+     * if has StcikyHeader do not throw Exception ##
+     *
+     * @param view
+     */
+    public void stickyheaderMuti(View view) {
+        Intent intent = new Intent(this,ListActivity.class);
+        intent.putExtra("ListType",6);
+        startActivity(intent);
+    }
 }
