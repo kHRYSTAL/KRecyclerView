@@ -335,7 +335,7 @@ public class KRecyclerView extends RelativeLayout{
     };
 
 
-    public void setLoadDataLintener(LoadDataListener lintener){
+    public void setLoadDataListener(LoadDataListener lintener){
         mListener = lintener;
     }
 

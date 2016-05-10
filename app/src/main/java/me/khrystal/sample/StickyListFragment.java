@@ -68,7 +68,7 @@ public class StickyListFragment extends Fragment implements KRecyclerView.LoadDa
 
 
         recyclerView.setAdapter(adapter, 1, LinearLayoutManager.VERTICAL,false);
-        recyclerView.setLoadDataLintener(this);
+        recyclerView.setLoadDataListener(this);
         recyclerView.setItemCount(10);
         recyclerView.isUseByNetWork(false);
         decor = new StickyHeaderDecoration(adapter);

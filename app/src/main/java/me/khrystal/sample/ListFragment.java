@@ -66,7 +66,7 @@ public class ListFragment extends Fragment implements KRecyclerView.LoadDataList
         recyclerView = (KRecyclerView) view.findViewById(R.id.recyclerview);
         adapter = new SimpleAdapter(this,dataList);
         recyclerView.setAdapter(adapter, column, LinearLayoutManager.VERTICAL,false);
-        recyclerView.setLoadDataLintener(this);
+        recyclerView.setLoadDataListener(this);
         recyclerView.setItemCount(10);
         recyclerView.isUseByNetWork(false);
         if (type==3||type==2) {

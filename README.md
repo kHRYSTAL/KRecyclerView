@@ -18,7 +18,7 @@ later:
 
 
 it's support Grid and List(Refresh and LoadMore orientation is Vertical)
-if you want use multi-type display easily, you can use[RecyclerViewAdapterDelegate][3]
+if you want use multi-type display easily, you can use [RecyclerViewAdapterDelegate][3]
 
 
 ##screenshot
@@ -69,24 +69,24 @@ the library minSdkVersion is 13 and targetSdkVersion is 23
 
 ####init
 ```java
-krecyclerView = (KRecyclerView) view.findViewById(R.id.recyclerview);
+kRecyclerView = (KRecyclerView) view.findViewById(R.id.recyclerview);
 //set your adapter like RecyclerView.Adapter<>
 adapter = new SimpleAdapter(this,dataList);
 //setAdapter
 //Notice when column <= 1,KRecyclerView will use LinearLayoutManger
-krecyclerView.setAdapter(adapter, column,LinearLayoutManager.VERTICAL);
-krecyclerView.setLoadDataLintener(new KRecyclerView.LoadDataListener() {
+kRecyclerView.setAdapter(adapter, column,LinearLayoutManager.VERTICAL);
+kRecyclerView.setLoadDataListener(new KRecyclerView.LoadDataListener() {
     @Override
     public void loadData(int page) {
       //load data method it's used by refresh and load more
     }
 });
 //make KRecyclerView know how many items in a page
-krecyclerView.setItemCount(10);
-//make KRecyclerView know loaddata need to judge network can available
+kRecyclerView.setItemCount(10);
+//make KRecyclerView know loadData need to judge network can available
 //Notice when isUseByNetWork(true) and network can't available
 //the loading footer can click to load more again
-krecyclerView.isUseByNetWork(true);
+kRecyclerView.isUseByNetWork(true);
 ```
 
 ### setRefreshHeader
@@ -99,13 +99,13 @@ sample has a custom refresh header
 //set classic refresh header
 PtrClassicDefaultHeader defaultHeader =
     new PtrClassicDefaultHeader(getActivity());
-krecyclerView.mPtrFrameLayout.setHeaderView(defaultHeader);
-krecyclerView.mPtrFrameLayout.addPtrUIHandler(defaultHeader);
+kRecyclerView.mPtrFrameLayout.setHeaderView(defaultHeader);
+kRecyclerView.mPtrFrameLayout.addPtrUIHandler(defaultHeader);
 //auto refresh once
-krecyclerView.mPtrFrameLayout.postDelayed(new Runnable() {
+kRecyclerView.mPtrFrameLayout.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    krecyclerView.mPtrFrameLayout.autoRefresh(true);
+                    kRecyclerView.mPtrFrameLayout.autoRefresh(true);
                 }
             }, 400);
 ```
@@ -121,7 +121,7 @@ if you want to use **SwipRefreshLayout** you can use like
     public void onRefresh() {
         swipeRefreshLayout.setRefreshing(true);
         //this method will set page=1 and called loadData(int page)
-        krecyclerView.setPageAndRefresh(1);
+        kRecyclerView.setPageAndRefresh(1);
         swipeRefreshLayout.setRefreshing(true);
     }
 
@@ -134,13 +134,13 @@ krecyclerView.hideEmptyView();
 
 ###set KRecycerView reenable load more or cant load more
 ```java
-krecyclerView.enableLoadMore();
-krecyclerView.cantLoadMore();
+kRecyclerView.enableLoadMore();
+kRecyclerView.cantLoadMore();
 ```
 ###addheaderView
 ```java
-headerView = LayoutInflater.from(getContext()).inflate(R.layout.header_view,recyclerView,false);
-recyclerView.addHeaderView(headerView);
+headerView = LayoutInflater.from(getContext()).inflate(R.layout.header_view,kRecyclerView,false);
+kRecyclerView.addHeaderView(headerView);
 ```
 
 

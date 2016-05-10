@@ -89,7 +89,7 @@ public class MutiTypeStickFragment extends Fragment implements KRecyclerView.Loa
 
 
         recyclerView.setAdapter(adapter, 1, LinearLayoutManager.VERTICAL,false);
-        recyclerView.setLoadDataLintener(this);
+        recyclerView.setLoadDataListener(this);
         recyclerView.setItemCount(10);
         recyclerView.isUseByNetWork(false);
         StickyHeaderDecoration decor = new StickyHeaderDecoration(adapter);
