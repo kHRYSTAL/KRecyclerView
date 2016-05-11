@@ -25,11 +25,16 @@ public class ListActivity extends AppCompatActivity {
             StickyListFragment fragment = new StickyListFragment();
             transaction.add(R.id.fragment_container, fragment);
             transaction.commit();
-        }else if (type==6){
+        }else if (type==6) {
             MutiTypeStickFragment fragment = new MutiTypeStickFragment();
+            transaction.add(R.id.fragment_container, fragment);
+            transaction.commit();
+        }else if (type==7){
+            MutiTypeFragment fragment = new MutiTypeFragment();
             transaction.add(R.id.fragment_container,fragment);
             transaction.commit();
-        }else {
+
+        } else {
             ListFragment fragment = new ListFragment();
             Bundle bundle = new Bundle();
             bundle.putInt("ListType", type);

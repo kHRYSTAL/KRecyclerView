@@ -47,11 +47,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <!--<Button-->
-        <!--android:text="StickyHeaderMutiList"-->
-        <!--android:gravity="center"-->
-        <!--android:textSize="30sp"-->
-        <!--android:onClick="stickyheaderMuti"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content" />-->
+    <Button
+        android:text="Multitype"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:onClick="multitype"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:text="StickyHeaderMultiList"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:onClick="stickyheaderMulti"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>

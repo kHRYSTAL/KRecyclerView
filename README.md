@@ -11,9 +11,9 @@ dependent on [Ultra-Pull-To-Refresh](https://github.com/liaohuqiu/android-Ultra-
 > * showEmptyView
 > * addHeaderView
 > * support sticky header(need fix,couldn't support click)
+> * support multi-type when use sticky header
 
 later:
-> * support multi-type when use sticky header
 > * can modify load more UI  
 
 
@@ -28,6 +28,8 @@ if you want use multi-type display easily, you can use [RecyclerViewAdapterDeleg
 ![ss-4](https://github.com/kHRYSTAL/KRecyclerView/blob/master/screenshot/screenshot4.gif)
 ![ss-5](https://github.com/kHRYSTAL/KRecyclerView/blob/master/screenshot/screenshot5.gif)
 ![ss-6](https://github.com/kHRYSTAL/KRecyclerView/blob/master/screenshot/screenshot6.gif)
+![ss-7](https://github.com/kHRYSTAL/KRecyclerView/blob/master/screenshot/screenshot7.gif)
+![ss-8](https://github.com/kHRYSTAL/KRecyclerView/blob/master/screenshot/screenshot8.gif)
 
 
 ##Setup with Android Studio

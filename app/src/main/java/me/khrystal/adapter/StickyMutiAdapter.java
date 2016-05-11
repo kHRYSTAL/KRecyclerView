@@ -32,7 +32,7 @@ public  class StickyMutiAdapter extends DelegateAdapter<Color> implements Sticky
     private List<Color> dataList;
 
     public StickyMutiAdapter(Context context, List<Color> datas) {
-        super(context, datas);
+        super(context,datas,true);
         mContext = context;
         dataList = datas;
     }

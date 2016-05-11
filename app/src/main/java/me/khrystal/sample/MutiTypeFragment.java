@@ -15,7 +15,9 @@ import java.util.Collections;
 import java.util.List;
 
 import in.srain.cube.views.ptr.PtrClassicDefaultHeader;
+import me.khrystal.adapter.MutiTypeAdapter;
 import me.khrystal.adapter.StickyMutiAdapter;
+import me.khrystal.deglgationlib.base.DelegateAdapter;
 import me.khrystal.deglgationlib.base.DelegateViewHolder;
 import me.khrystal.deglgationlib.base.Delegation;
 import me.khrystal.module.Color;
@@ -26,15 +28,14 @@ import me.khrystal.widget.StickyHeaderDecoration;
 /**
  * usage:
  * author: kHRYSTAL
- * create time: 16/5/10
+ * create time: 16/5/11
  * update time:
  * email: 723526676@qq.com
  */
-public class MutiTypeStickFragment extends Fragment implements KRecyclerView.LoadDataListener {
-
+public class MutiTypeFragment extends Fragment implements KRecyclerView.LoadDataListener {
     private KRecyclerView recyclerView;
     private List<Color> dataList;
-    private StickyMutiAdapter adapter;
+    private MutiTypeAdapter adapter;
     int start,end;
 
     @Override
@@ -56,10 +57,10 @@ public class MutiTypeStickFragment extends Fragment implements KRecyclerView.Loa
                 .build();
         recyclerView.addItemDecoration(divider);
         // TODO: 16/5/10
-        adapter = new StickyMutiAdapter(getActivity(),dataList);
+        adapter = new MutiTypeAdapter(getActivity(),dataList);
         adapter.addDelegation(new Delegation<Color>(R.layout.red_item,1) {
             @Override
-            protected void handle(DelegateViewHolder delegateViewHolder, Color color,final int i) {
+            protected void handle(DelegateViewHolder delegateViewHolder, Color color, final int i) {
                 delegateViewHolder.getTextView(R.id.item_text).setText("Red"+i);
                 delegateViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -92,10 +93,7 @@ public class MutiTypeStickFragment extends Fragment implements KRecyclerView.Loa
         recyclerView.setLoadDataListener(this);
         recyclerView.setItemCount(10);
         recyclerView.isUseByNetWork(false);
-        StickyHeaderDecoration decor = new StickyHeaderDecoration(adapter);
 
-
-        recyclerView.addItemDecoration(decor,1);
 
         PtrClassicDefaultHeader defaultHeader = new PtrClassicDefaultHeader(getActivity());
         recyclerView.mPtrFrameLayout.setHeaderView(defaultHeader);

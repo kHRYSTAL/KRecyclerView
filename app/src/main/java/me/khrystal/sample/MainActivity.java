@@ -53,11 +53,18 @@ public class MainActivity extends AppCompatActivity {
      * todo must hand Delegation onBindViewHolder
      * if has StcikyHeader do not throw Exception ##
      *
+     *
      * @param view
      */
-    public void stickyheaderMuti(View view) {
+    public void stickyheaderMulti(View view) {
         Intent intent = new Intent(this,ListActivity.class);
         intent.putExtra("ListType",6);
+        startActivity(intent);
+    }
+
+    public void multitype(View view) {
+        Intent intent = new Intent(this,ListActivity.class);
+        intent.putExtra("ListType",7);
         startActivity(intent);
     }
 }
